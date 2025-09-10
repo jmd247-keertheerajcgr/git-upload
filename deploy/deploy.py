@@ -83,7 +83,7 @@ def main(env: str):
     os.environ["AZURE_CLIENT_ID"] = CLIENT_ID
     os.environ["AZURE_CLIENT_SECRET"] = CLIENT_SECRET
 
-    AUTH_HOST = "https://login.microsoftonline.com/2800c0a0-70e9-49be-8733-faeaa6aced99"
+    AUTH_HOST = "https://login.microsoftonline.com"
 
     here = Path(__file__).resolve().parent                        
     csv_file = here.parent / "config" / "workspace_data.csv" 
@@ -124,6 +124,7 @@ if __name__ == "__main__":
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
 
 
 
