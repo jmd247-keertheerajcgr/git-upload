@@ -1,0 +1,33 @@
+ame: Fabric CI/CD Deployment
+
+on:
+  push:
+    branches:
+      - prod
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: AZURE_TENANT_ID
+    env:
+      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_WORKSPACE_ID }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install fabric_cicd
+
+      - name: Run deployment script
+        run: |
+
+          python ./deploy/deploy.py ${{ github.ref_name }}
