@@ -1,4 +1,4 @@
-ame: Fabric CI/CD Deployment
+name: Fabric CI/CD Deployment
 
 on:
   push:
@@ -29,5 +29,6 @@ jobs:
 
       - name: Run deployment script
         run: |
+
 
           python ./deploy/deploy.py ${{ github.ref_name }}
