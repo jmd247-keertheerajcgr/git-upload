@@ -2,7 +2,7 @@
 # Fabric notebook source
 # METADATA ********************
 # META {
-# META   "kernel_info": { 
+# META   "kernel_info": {  
 # META     "name": "synapse_pyspark"
 # META   },
 # META   "dependencies": {}
@@ -124,4 +124,5 @@ if __name__ == "__main__":
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
 
