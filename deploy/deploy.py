@@ -90,6 +90,7 @@ def main(env: str):
     )
     token_cred = StaticTokenCredential(access_token)
     repository_directory = os.getcwd()
+    print(repository_directory, "pathh")
 
     try:
         target_workspace = FabricWorkspace(
@@ -118,3 +119,4 @@ if __name__ == "__main__":
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
