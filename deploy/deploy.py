@@ -58,7 +58,10 @@ def get_access_token(tenant_id: str, client_id: str, client_secret: str, auth_ho
     """
     auth_host = (auth_host or "https://login.microsoftonline.com").rstrip("/")
     authority_url = f"{auth_host}/{tenant_id}"
-    scopes = ["https://api.fabric.microsoft.com/.default"]
+    scopes = [
+    "https://api.fabric.microsoft.com/.default",
+    "https://analysis.windows.net/powerbi/api/.default"
+    ]
 
     app = msal.ConfidentialClientApplication(
         client_id=client_id,
@@ -124,6 +127,7 @@ if __name__ == "__main__":
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
 
 
 
